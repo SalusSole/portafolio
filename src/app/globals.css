@@ -3,31 +3,34 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--accent: 136, 58, 234;
+	--accent-light: 224, 204, 250;
+	--accent-dark: 49, 10, 101;
+	--accent-gradient: linear-gradient(
+		45deg,
+		rgb(var(--accent)),
+		rgb(var(--accent-light)) 30%,
+		white 60%
+	);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	cursor: url(/cursors/pointer.svg), auto;
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+html {
+	background: white;
+	color: #002531;
+	background-size: 224px;
+}
+* {
+	box-sizing: border-box;
+}
+.cursor-pointer {
+	cursor: url(/cursors/hand-finger.svg), auto;
+}
+.cursor-pointer:focus {
+	cursor: url(/cursors/hand-click.svg), auto;
+}
+a,
+button {
+	@apply cursor-pointer;
 }
