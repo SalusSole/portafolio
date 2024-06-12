@@ -16,7 +16,7 @@ export default function Home() {
 		<>
 			<section className="grid grid-cols-[auto_1fr] gap-x-3 items-center">
 				<img
-					src="/me.jpg"
+					src="/Me.jpg"
 					alt="Salvador"
 					className="max-md:w-[64px] w-[200px] rounded-full max-md:row-span-3 row-span-4"
 				/>
