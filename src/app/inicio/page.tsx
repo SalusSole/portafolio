@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { IconBrandTypescript, IconBrandReact } from "@tabler/icons-react";
 import { Ubuntu_Mono } from "next/font/google";
 
@@ -14,7 +15,11 @@ export default function Home() {
 	return (
 		<>
 			<section className="grid grid-cols-[auto_1fr] gap-x-3 items-center">
-				<div className="bg-slate-300 max-md:w-[64px] w-[200px] aspect-square rounded-full max-md:row-span-3 row-span-4"></div>
+				<img
+					src="/me.jpg"
+					alt="Salvador"
+					className="max-md:w-[64px] w-[200px] rounded-full max-md:row-span-3 row-span-4"
+				/>
 				<h3
 					className={cn(
 						"text-pink-600 md:text-2xl",
