@@ -11,6 +11,7 @@ import {
 } from "@tabler/icons-react";
 
 import { Chip } from "@/components/Chip";
+import Link from "next/link";
 
 const tags = [
 	{
@@ -56,13 +57,13 @@ export default function page() {
 					</Chip>
 				))}
 			</div>
-			<a
+			<Link
 				href="https://www.celularfire.com"
 				className="flex gap-1"
 				target="_blank"
 			>
 				<IconLink /> www.celularfire.com
-			</a>
+			</Link>
 			<article>
 				<h3 className="text-xl md:text-2xl mt-5 mb-2">
 					🚀 Introducción

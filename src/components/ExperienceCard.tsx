@@ -7,13 +7,14 @@ import {
 	IconSchool,
 } from "@tabler/icons-react";
 import { cn } from "../lib/cn";
+import Link from "next/link";
 
 interface Props {
 	children: ReactNode;
 	period: string;
 	title: string;
 	type: "work" | "project" | "studies";
-	url: string;
+	url?: string;
 }
 
 export const ExperienceCard = ({
@@ -23,8 +24,26 @@ export const ExperienceCard = ({
 	type,
 	url,
 }: Props) => {
+	if (!url) {
+		return (
+			<div className="border-2 border-white p-3 rounded-xl grid md:grid-cols-[150px_auto]">
+				<span className="text-black/75">{period}</span>
+				<h4 className="font-medium grid grid-cols-[1fr_24px] gap-1 w-fit">
+					{title}
+				</h4>
+				<ExperienceTypeChip
+					type={type}
+					className="md:col-start-2 mt-1"
+				/>
+				<p className="md:col-start-2 text-sm text-black/75 mt-3">
+					{children}
+				</p>
+			</div>
+		);
+	}
+
 	return (
-		<a
+		<Link
 			className="group border-2 border-white md:hover:border-black p-3 rounded-xl grid md:grid-cols-[150px_auto] cursor-pointer"
 			href={url}
 		>
@@ -37,7 +56,7 @@ export const ExperienceCard = ({
 			<p className="md:col-start-2 text-sm text-black/75 mt-3">
 				{children}
 			</p>
-		</a>
+		</Link>
 	);
 };
 
@@ -68,7 +87,8 @@ export const ExperienceTypeChip = ({
 				{...otherProps}
 				className={cn(className, "bg-blue-600", commonClases)}
 			>
-				<IconCode size={20} /> Formación académica
+				<IconSchool size={20} />
+				Formación académica
 			</Chip>
 		);
 	if (type === "work")
@@ -77,7 +97,8 @@ export const ExperienceTypeChip = ({
 				{...otherProps}
 				className={cn(className, "bg-pink-600", commonClases)}
 			>
-				<IconSchool size={20} /> Experiencia laboral
+				<IconCode size={20} />
+				Experiencia laboral
 			</Chip>
 		);
 };

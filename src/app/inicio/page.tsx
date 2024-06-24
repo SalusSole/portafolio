@@ -5,6 +5,7 @@ import { Ubuntu_Mono } from "next/font/google";
 import { buttonVariants } from "@/components/Button";
 import { Chip } from "@/components/Chip";
 import { cn } from "@/lib/cn";
+import Link from "next/link";
 
 const ubuntuMono = Ubuntu_Mono({
 	weight: ["400", "700"],
@@ -64,15 +65,15 @@ export default function Home() {
 				</p>
 			</article>
 			<div className="flex max-md:flex-col gap-5">
-				<a className={buttonVariants()} href="/contratacion">
+				<Link className={buttonVariants()} href="/contratacion">
 					¡Trabajemos juntos!
-				</a>
-				<a
+				</Link>
+				<Link
 					className={buttonVariants({ color: "accent" })}
 					href="/experiencia"
 				>
 					¡Conoce mi trabajo!
-				</a>
+				</Link>
 			</div>
 		</>
 	);

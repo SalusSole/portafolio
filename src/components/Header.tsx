@@ -7,6 +7,7 @@ import { Ubuntu_Mono } from "next/font/google";
 import { usePathname } from "next/navigation";
 
 import { cn } from "../lib/cn";
+import Link from "next/link";
 
 const ubuntuMono = Ubuntu_Mono({
 	weight: ["400", "700"],
@@ -78,7 +79,7 @@ export const MenuItem = ({
 }) => {
 	return (
 		<li>
-			<a
+			<Link
 				href={href}
 				className={cn(
 					ubuntuMono.className,
@@ -87,7 +88,7 @@ export const MenuItem = ({
 				)}
 			>
 				{children}
-			</a>
+			</Link>
 		</li>
 	);
 };

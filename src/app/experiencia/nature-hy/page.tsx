@@ -12,6 +12,7 @@ import {
 } from "@tabler/icons-react";
 
 import { Chip } from "@/components/Chip";
+import Link from "next/link";
 
 const tags = [
 	{
@@ -47,13 +48,13 @@ export default function Page() {
 					</Chip>
 				))}
 			</div>
-			<a
+			<Link
 				href="https://naturehy.vercel.app"
 				className="flex gap-1"
 				target="_blank"
 			>
 				<IconLink /> naturehy.vercel.app/
-			</a>
+			</Link>
 			<article>
 				<h3 className="text-xl md:text-2xl mt-5 mb-2">
 					🚀 Introducción

@@ -1,5 +1,6 @@
 import { buttonVariants } from "@/components/Button";
 import { Skills } from "@/components/Skill";
+import Link from "next/link";
 
 export default function page() {
 	return (
@@ -44,18 +45,18 @@ export default function page() {
 				Estaré encantado de saber de ti para conversar cómo mis perfil
 				puede aportar valor a tu equipo.
 				<div className="flex gap-5 mt-3">
-					<a
+					<Link
 						href="mailto:salvador.sol.ssi.13@gmail.com"
 						className={buttonVariants()}
 					>
 						Envíame un correo
-					</a>
-					<a
+					</Link>
+					<Link
 						href="/experiencia"
 						className={buttonVariants({ color: "accent" })}
 					>
 						¡Conoce mi trabajo!
-					</a>
+					</Link>
 				</div>
 			</article>
 		</>
